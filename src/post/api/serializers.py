@@ -1,4 +1,3 @@
-from traceback import print_exception
 from rest_framework import serializers
 from post.models import Post
 
