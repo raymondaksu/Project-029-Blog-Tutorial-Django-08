@@ -15,6 +15,7 @@ class PostListAPIView(ListAPIView, CreateModelMixin):
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ('title', 'content')
     pagination_class = PostPagination
+    throttle_scope = 'post_list'
 
     def get_queryset(self):
         queryset = Post.objects.filter(draft=False)
