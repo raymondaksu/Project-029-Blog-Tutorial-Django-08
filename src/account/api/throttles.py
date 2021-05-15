@@ -4,7 +4,7 @@ class RegisterThrottle(SimpleRateThrottle):
     scope = 'registerthrottle'
 
     def get_cache_key(self, request, view):
-        if request.user.is_authenticated or request.methot == 'GET':
+        if request.user.is_authenticated or request.method == 'GET':
             return None
         
         return self.cache_format % {

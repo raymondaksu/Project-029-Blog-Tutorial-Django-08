@@ -37,8 +37,8 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.ScopedRateThrottle',
     ),
     'DEFAULT_THROTTLE_RATES': {
-        'registerthrottle': '5/hour',
-        'post_list': '5/hour',
+        'registerthrottle': '100/hour',
+        'post_list': '100/hour',
     }
 }
 
@@ -154,3 +154,4 @@ APPEND_SLASH = False
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
