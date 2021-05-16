@@ -199,8 +199,8 @@ class UserProfileUpdate(APITestCase):
         self.assertEqual(401, response.status_code)
 
 
-    # Check try update profile with empty info
-    def test_with_empty_informations(self):
+    # Check try update profile with valid info
+    def test_with_valid_informations(self):
         self.login_with_token()
         data = {
             "id" : 1,

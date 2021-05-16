@@ -9,6 +9,9 @@ class Favourite(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     content = models.CharField(max_length=120)
 
+    class Meta:
+        ordering = ["-id"]
+
     def __str__(self):
         return self.user.username
    
