@@ -68,7 +68,7 @@ class UserRegistrationTestCase(APITestCase):
         self.client.login(username="usertest", password='Ra741258')
         response = self.client.get(self.url)
 
-        self.assertEqual(405, response.status_code)
+        self.assertEqual(403, response.status_code)
 
         
     def test_user_authenticated_token_registration(self):
