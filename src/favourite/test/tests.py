@@ -1,4 +1,3 @@
-from django.http import response
 from favourite.models import Favourite
 from post.models import Post
 from rest_framework.test import APITestCase
