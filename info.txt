@@ -1,0 +1,22 @@
+for create an image: docker build . -t <Desired Image Name>
+for run created image and create a container: docker run -p 8000:8000 <Created Image Name>
+for reach into an exist container with containerID : docker exec -it <207d650bb985> /bin/bash
+
+--Docker-Compose--
+
+activate docker-compose: docker-compose up
+deactivate docker-compose: docker-compose down
+
+after changing docker-compose.yml file: docker-compose build
+
+after create all services and re-build: docker-compose run --rm djangoapp /bin/bash -c "cd main; ./manage.py migrate"
+
+
+in order to transfer static files to nginx; 
+    - docker exec -it <207d650bb985> /bin/bash (server_djangoapp containerID)
+    - /opt/services/djangoapp/src/main# python manage.py collectstatic --no-input
+
+
+delete an exist image: docker rmi <server_djangoapp> --force
+
+clear for remove caching documents after delete image: docker-compose rm
